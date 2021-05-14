@@ -18,7 +18,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew test
     - name: Upload allure results
-      run: ./allurectl upload build/allure-results
+      run: ls -al && ls -al build && ./allurectl upload build/allure-results
       continue-on-error: true
       env:
         ALLURE_ENDPOINT: ${{ secrets.ALLURE_ENDPOINT }}
