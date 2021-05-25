@@ -34,6 +34,7 @@ configure<AllureExtension> {
         version = "2.14.0"
     }
 
+    resultsDir = project.file("allure-results")
 }
 
 tasks.withType(JavaCompile::class) {
