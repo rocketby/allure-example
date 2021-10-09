@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @Layer("web")
 @Owner("tat")
@@ -14,6 +15,7 @@ public class GoogleTest {
     @Microservice("Authorization")
     @Tags({@Tag("api"), @Tag("smoke")})
     @ParameterizedTest(name = "Authorize")
+    @ValueSource(strings = {"First Note", "Second Note"})
     public void testAuth(){
         int a=10;
         int b=10;
