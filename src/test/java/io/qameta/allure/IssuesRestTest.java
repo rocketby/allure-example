@@ -24,7 +24,7 @@ public class IssuesRestTest {
     @ParameterizedTest(name = "Create issue via api")
     @AllureId("5094")
     @ValueSource(strings = {"First Note", "Second Note"})
-    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    @JiraIssues({@JiraIssue("HOMEWORK-242")})
     public void shouldCreateUserNote(String title) {
         parameter("owner", OWNER);
         parameter("repo", REPO);
@@ -41,7 +41,7 @@ public class IssuesRestTest {
     @ParameterizedTest(name = "Close issue via api")
     @AllureId("5093")
     @ValueSource(strings = {"First Note", "Second Note"})
-    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    @JiraIssues({@JiraIssue("HOMEWORK-242")})
     public void shouldDeleteUserNote(String title) {
         parameter("owner", OWNER);
         parameter("repo", REPO);

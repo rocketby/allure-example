@@ -23,7 +23,7 @@ public class GoogleTest {
     @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
     @ParameterizedTest(name = "Authorize in login form with correct credentials")
     @ValueSource(strings = {"login", "password"})
-    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    @JiraIssues({@JiraIssue("HOMEWORK-242")})
     public void testAuthorizationInGUi(){
         parameter("owner", OWNER);
         parameter("repo", REPO);
@@ -39,7 +39,7 @@ public class GoogleTest {
     @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
     @ParameterizedTest(name = "Authorize with wrong password")
     @ValueSource(strings = {"login", "password"})
-    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    @JiraIssues({@JiraIssue("HOMEWORK-242")})
     public void testAuthorizationByApi(){
         parameter("owner", OWNER);
         parameter("repo", REPO);
