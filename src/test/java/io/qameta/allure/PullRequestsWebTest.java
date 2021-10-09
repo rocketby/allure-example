@@ -33,8 +33,8 @@ public class PullRequestsWebTest {
     @Microservice("Billing")
     @Story("Create new pull request")
     @Tags({@Tag("web"), @Tag("regress"), @Tag("smoke")})
-    @JiraIssues({@JiraIssue("AE-1"), @JiraIssue("AE-2")})
     @DisplayName("Creating new issue for authorized user")
+    @JiraIssues({@JiraIssue("HOMEWORK-241")})
     public void shouldCreatePullRequest() {
         steps.openPullRequestsPage(OWNER, REPO);
         steps.createPullRequestFromBranch(BRANCH);
@@ -44,11 +44,11 @@ public class PullRequestsWebTest {
     @Test
     @AllureId("5092")
     @TM4J("AE-T7")
-    @JiraIssue("AE-2")
     @Microservice("Repository")
     @Story("Close existing pull request")
     @Tags({@Tag("web"), @Tag("regress")})
     @DisplayName("Deleting existing issue for authorized user")
+    @JiraIssues({@JiraIssue("HOMEWORK-241")})
     public void shouldClosePullRequest() {
         steps.openPullRequestsPage(OWNER, REPO);
         steps.createPullRequestFromBranch(BRANCH);

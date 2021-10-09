@@ -1,24 +1,49 @@
 package io.qameta.allure;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static io.qameta.allure.Allure.parameter;
+
 @Layer("web")
-@Owner("tat")
+@Lead("Alex")
 @Feature("Authorization")
 public class GoogleTest {
+    private static final String OWNER = "allure-framework";
+    private static final String REPO = "allure2";
 
+    @Test
+    @AllureId("5182")
+    @Owner("Tat")
+    @DisplayName("Test successful authorization")
+    @TM4J("AE-T8")
+    @Story("Execute authorization")
     @Microservice("Authorization")
-    @Tags({@Tag("api"), @Tag("smoke")})
-    @ParameterizedTest(name = "Authorize")
-    @ValueSource(strings = {"First Note", "Second Note"})
-    public void testAuth(){
-        int a=10;
-        int b=10;
-        Assertions.assertTrue(a==b);
+    @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
+    @ParameterizedTest(name = "Authorize in login form with correct credentials")
+    @ValueSource(strings = {"login", "password"})
+    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    public void testAuthorizationInGUi(){
+        parameter("owner", OWNER);
+        parameter("repo", REPO);
     }
+
+    @Test
+    @AllureId("5193")
+    @Owner("Tat")
+    @DisplayName("Test not successful authorization")
+    @TM4J("AE-T9")
+    @Story("Execute authorization")
+    @Microservice("Authorization")
+    @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
+    @ParameterizedTest(name = "Authorize with wrong password")
+    @ValueSource(strings = {"login", "password"})
+    @JiraIssues({@JiraIssue("HOMEWORK-241")})
+    public void testAuthorizationByApi(){
+        parameter("owner", OWNER);
+        parameter("repo", REPO);
+    }
+
+
 }
