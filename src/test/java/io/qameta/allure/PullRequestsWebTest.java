@@ -28,6 +28,7 @@ public class PullRequestsWebTest {
     }
 
     @Test
+    @AllureId("5095")
     @TM4J("AE-T6")
     @Microservice("Billing")
     @Story("Create new pull request")
@@ -41,6 +42,7 @@ public class PullRequestsWebTest {
     }
 
     @Test
+    @AllureId("5092")
     @TM4J("AE-T7")
     @JiraIssue("AE-2")
     @Microservice("Repository")
