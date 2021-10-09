@@ -17,14 +17,11 @@ public class GoogleTest {
     @AllureId("5182")
     @Owner("Tat")
     @DisplayName("Test successful authorization")
-    @TM4J("AE-T8")
     @Story("Execute authorization")
     @Microservice("Authorization")
     @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
-    @ParameterizedTest(name = "Authorize in login form with correct credentials")
-    @ValueSource(strings = {"login", "password"})
     @JiraIssues({@JiraIssue("HOMEWORK-242")})
-    public void testAuthorizationInGUi(){
+    public void testSuccessfulAuthorization(){
         parameter("owner", OWNER);
         parameter("repo", REPO);
     }
@@ -33,14 +30,11 @@ public class GoogleTest {
     @AllureId("5193")
     @Owner("Tat")
     @DisplayName("Test not successful authorization")
-    @TM4J("AE-T9")
     @Story("Execute authorization")
     @Microservice("Authorization")
     @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
-    @ParameterizedTest(name = "Authorize with wrong password")
-    @ValueSource(strings = {"login", "password"})
-    @JiraIssues({@JiraIssue("HOMEWORK-242")})
-    public void testAuthorizationByApi(){
+    @JiraIssue("HOMEWORK-242")
+    public void testAuthorizationWithWrongPassword(){
         parameter("owner", OWNER);
         parameter("repo", REPO);
     }
