@@ -6,12 +6,14 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 
+@Layer("web")
+@Owner("tat")
+@Feature("Authorization")
 public class GoogleTest {
 
-    @Test
-    @Microservice("Billing")
+    @Microservice("Authorization")
     @Tags({@Tag("api"), @Tag("smoke")})
-    @ParameterizedTest(name = "Create issue via api")
+    @ParameterizedTest(name = "Authorize")
     public void testAuth(){
         int a=10;
         int b=10;
