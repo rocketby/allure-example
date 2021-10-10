@@ -29,7 +29,7 @@ public class GoogleTest {
     @Test
     @AllureId("5193")
     @Owner("Tat")
-    @DisplayName("Test not successful authorization!")
+    @DisplayName("Test not successful authorization")
     @Story("Execute authorization")
     @Microservice("Authorization")
     @Tags({@Tag("GUI"), @Tag("smoke"), @Tag("authorization")})
